@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import { useCounter, useQuote } from '../hooks/hooks'
+import React from 'react'
+import { useCounter, useQuote, useInput } from '../hooks/hooks'
 
 export default function App() {
   // COUNTER
   const [count, inc] = useCounter(5)
   // QUOTE
-  
+  const quoteOfTheDay = useQuote() 
   // INPUT
-  const [value, setValue] = useState('')
-  const onChange = evt => setValue(evt.target.value)
-  const onReset = () => setValue('')
+  const { value, onChange, onReset } = useInput()
 
   return (
     <div>

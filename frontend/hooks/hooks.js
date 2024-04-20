@@ -18,3 +18,10 @@ export const useQuote = () => {
   }, [])
   return quoteOfTheDay
 }
+
+export const useInput = (initialValue = '') => {
+  const [value, setValue] = useState(initialValue)
+  const onChange = evt => setValue(evt.target.value)
+  const onReset = () => setValue(initialValue)
+  return { value, onChange, onReset }
+}
